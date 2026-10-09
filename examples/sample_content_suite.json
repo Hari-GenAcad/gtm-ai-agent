@@ -1,0 +1,303 @@
+{
+  "brief": {
+    "title": "LaunchPad product brief",
+    "source_id": "collection:3",
+    "content": "[Source: product_brief.md]\n# LaunchPad product brief\n\nLaunchPad is a campaign workspace for revenue teams. It turns an approved product brief into coordinated LinkedIn, email, blog, and advertising drafts while retaining citations to the supplied brief.\n\nLaunchPad is intended for product marketing managers and revenue leaders who need a consistent starting point for campaign editing. It does not publish content to external platforms.\n\nThe local preview launches on November 1, 2026. Introductory pricing is INR 4,999 per workspace per month. The product requires human editing and approval before any content is published.\n\n[Source: launch_calendar.csv]\nRow 2\nProduct: LaunchPad\nEvent: Local preview launch\nLaunch Date: 2026-11-01\nAudience: Product marketing managers and revenue leaders\nStatus: Approved\n\n[Source: past_campaign.md]\n# Approved past campaign guidance\n\nLaunchPad messaging should be clear, confident, and practical. Lead with coordinated evidence-grounded drafts rather than generic claims about artificial intelligence.\n\nProduct marketing managers responded best to messaging about reducing the time required to create a consistent first campaign draft. Every asset must remain ready to edit and must not be described as automatically ready to publish.",
+    "media_type": "text"
+  },
+  "documents": [
+    {
+      "title": "LaunchPad product brief",
+      "source_id": "product_brief.md",
+      "content": "# LaunchPad product brief\n\nLaunchPad is a campaign workspace for revenue teams. It turns an approved product brief into coordinated LinkedIn, email, blog, and advertising drafts while retaining citations to the supplied brief.\n\nLaunchPad is intended for product marketing managers and revenue leaders who need a consistent starting point for campaign editing. It does not publish content to external platforms.\n\nThe local preview launches on November 1, 2026. Introductory pricing is INR 4,999 per workspace per month. The product requires human editing and approval before any content is published.",
+      "media_type": "markdown"
+    },
+    {
+      "title": "launch calendar",
+      "source_id": "launch_calendar.csv",
+      "content": "Row 2\nProduct: LaunchPad\nEvent: Local preview launch\nLaunch Date: 2026-11-01\nAudience: Product marketing managers and revenue leaders\nStatus: Approved",
+      "media_type": "spreadsheet"
+    },
+    {
+      "title": "Approved past campaign guidance",
+      "source_id": "past_campaign.md",
+      "content": "# Approved past campaign guidance\n\nLaunchPad messaging should be clear, confident, and practical. Lead with coordinated evidence-grounded drafts rather than generic claims about artificial intelligence.\n\nProduct marketing managers responded best to messaging about reducing the time required to create a consistent first campaign draft. Every asset must remain ready to edit and must not be described as automatically ready to publish.",
+      "media_type": "markdown"
+    }
+  ],
+  "campaign": {
+    "objective": "Create a coordinated launch campaign for LaunchPad",
+    "audience": "product marketing managers, revenue leaders",
+    "tone": "clear, confident, and practical"
+  },
+  "analysis": {
+    "target_audience": [
+      "product marketing managers",
+      "revenue leaders"
+    ],
+    "tone": "clear, confident, and practical",
+    "value_proposition": "LaunchPad product brief LaunchPad is a campaign workspace for revenue teams. It turns an approved product brief into coordinated LinkedIn, email, blog, and advertising drafts while retaining citations to the supplied brief. LaunchPad is intended for product marketing managers and revenue leaders who",
+    "key_messages": [
+      "# LaunchPad product brief LaunchPad is a campaign workspace for revenue teams. It turns an approved product brief into coordinated LinkedIn, email, blog, and advertising drafts while retaining citations to the supplied b",
+      "# Approved past campaign guidance LaunchPad messaging should be clear, confident, and practical. Lead with coordinated evidence-grounded drafts rather than generic claims about artificial intelligence. Product marketing",
+      "Row 2 Product: LaunchPad Event: Local preview launch Launch Date: 2026-11-01 Audience: Product marketing managers and revenue leaders Status: Approved"
+    ],
+    "missing_facts": [],
+    "rationale": "Audience, tone, and messages were derived from retrieved approved evidence."
+  },
+  "stage": "complete",
+  "status": "approved",
+  "evidence": [
+    {
+      "passage_id": "product_brief.md#chunk-1",
+      "source_id": "product_brief.md",
+      "text": "# LaunchPad product brief\n\nLaunchPad is a campaign workspace for revenue teams. It turns an approved product brief into coordinated LinkedIn, email, blog, and advertising drafts while retaining citations to the supplied brief.\n\nLaunchPad is intended for product marketing managers and revenue leaders who need a consistent starting point for campaign editing. It does not publish content to external platforms.\n\nThe local preview launches on November 1, 2026. Introductory pricing is INR 4,999 per workspace per month. The product requires human editing and approval before any content is published.",
+      "score": 0.784291,
+      "chunk_index": 0
+    },
+    {
+      "passage_id": "past_campaign.md#chunk-1",
+      "source_id": "past_campaign.md",
+      "text": "# Approved past campaign guidance\n\nLaunchPad messaging should be clear, confident, and practical. Lead with coordinated evidence-grounded drafts rather than generic claims about artificial intelligence.\n\nProduct marketing managers responded best to messaging about reducing the time required to create a consistent first campaign draft. Every asset must remain ready to edit and must not be described as automatically ready to publish.",
+      "score": 0.560055,
+      "chunk_index": 0
+    },
+    {
+      "passage_id": "launch_calendar.csv#chunk-1",
+      "source_id": "launch_calendar.csv",
+      "text": "Row 2\nProduct: LaunchPad\nEvent: Local preview launch\nLaunch Date: 2026-11-01\nAudience: Product marketing managers and revenue leaders\nStatus: Approved",
+      "score": 0.486932,
+      "chunk_index": 0
+    }
+  ],
+  "content": {
+    "linkedin": {
+      "kind": "linkedin",
+      "title": "LinkedIn post",
+      "body": "Campaign planning should start with approved facts—not a blank page.\n\nMeet LaunchPad. LaunchPad product brief LaunchPad is a campaign workspace for revenue teams. It turns an approved product brief into coordinated LinkedIn, email, blog, and advertising drafts while retaining citations to the supplied bri [Sources: launch_calendar.csv, past_campaign.md, product_brief.md]\n\nBuilt for product marketing managers, revenue leaders, it provides a consistent, ready-to-edit campaign starting point. Create a coordinated launch campaign for LaunchPad. Revised to address review feedback.\n\nReview the evidence, refine the voice, and launch with confidence.",
+      "source_ids": [
+        "launch_calendar.csv",
+        "past_campaign.md",
+        "product_brief.md"
+      ]
+    },
+    "email": {
+      "kind": "email",
+      "title": "Introducing LaunchPad: grounded campaign drafts from approved facts",
+      "body": "Hello,\n\nCreating a coordinated launch campaign should not mean rewriting the same facts for every channel.\n\nLaunchPad helps product marketing managers, revenue leaders start from one grounded campaign story. LaunchPad product brief LaunchPad is a campaign workspace for revenue teams. It turns an approved product brief into coordinated LinkedIn, email, blog, and advertising drafts while retaining citations to the supplied bri [Sources: launch_calendar.csv, past_campaign.md, product_brief.md]\n\nCreate a coordinated launch campaign for LaunchPad. Revised to address review feedback.\n\nReview the draft suite and shape it for your launch.",
+      "source_ids": [
+        "launch_calendar.csv",
+        "past_campaign.md",
+        "product_brief.md"
+      ]
+    },
+    "blog": {
+      "kind": "blog",
+      "title": "How LaunchPad creates a grounded campaign starting point",
+      "body": "## The challenge\n\nProduct launches need consistent facts across social, email, blog, and ads. Disconnected drafting makes that consistency difficult.\n\n## A grounded starting point\n\nLaunchPad product brief LaunchPad is a campaign workspace for revenue teams. It turns an approved product brief into coordinated LinkedIn, email, blog, and advertising drafts while retaining citations to the supplied bri [Sources: launch_calendar.csv, past_campaign.md, product_brief.md]\n\n## Why it matters\n\nFor product marketing managers, revenue leaders, the result is a coordinated first draft that remains ready for human editing and approval. Create a coordinated launch campaign for LaunchPad. Revised to address review feedback.",
+      "source_ids": [
+        "launch_calendar.csv",
+        "past_campaign.md",
+        "product_brief.md"
+      ]
+    },
+    "ads": [
+      {
+        "kind": "ad",
+        "title": "Ad 1",
+        "body": "Turn approved product facts into a coordinated campaign draft with LaunchPad.",
+        "source_ids": [
+          "launch_calendar.csv",
+          "past_campaign.md",
+          "product_brief.md"
+        ]
+      },
+      {
+        "kind": "ad",
+        "title": "Ad 2",
+        "body": "One grounded story. Four campaign formats. Meet LaunchPad.",
+        "source_ids": [
+          "launch_calendar.csv",
+          "past_campaign.md",
+          "product_brief.md"
+        ]
+      },
+      {
+        "kind": "ad",
+        "title": "Ad 3",
+        "body": "Create a consistent launch starting point for product marketing managers, revenue leaders with LaunchPad.",
+        "source_ids": [
+          "launch_calendar.csv",
+          "past_campaign.md",
+          "product_brief.md"
+        ]
+      }
+    ],
+    "verified_facts": [
+      "# LaunchPad product brief LaunchPad is a campaign workspace for revenue teams. It turns an approved product brief into coordinated LinkedIn, email, blog, and advertising drafts while retaining citations to the supplied brief. LaunchPad is intended for product marketing managers a"
+    ],
+    "missing_facts": []
+  },
+  "review": {
+    "approved": true,
+    "decision": "pass",
+    "summary": "All grounding and consistency criteria passed.",
+    "findings": [],
+    "deterministic_checks": {
+      "linkedin_present": true,
+      "email_subject_and_body_present": true,
+      "blog_headline_and_body_present": true,
+      "three_distinct_ads_present": true,
+      "all_assets_attributed": true,
+      "verified_facts_grounded": true
+    }
+  },
+  "review_history": [
+    {
+      "approved": false,
+      "decision": "fail",
+      "summary": "Revision is required.",
+      "findings": [
+        {
+          "category": "tone",
+          "severity": "error",
+          "message": "The deterministic scenario requests a tone revision.",
+          "action": "Revise every asset to make the clear, confident, and practical tone more explicit."
+        }
+      ],
+      "deterministic_checks": {
+        "linkedin_present": true,
+        "email_subject_and_body_present": true,
+        "blog_headline_and_body_present": true,
+        "three_distinct_ads_present": true,
+        "all_assets_attributed": true,
+        "verified_facts_grounded": true
+      }
+    },
+    {
+      "approved": true,
+      "decision": "pass",
+      "summary": "All grounding and consistency criteria passed.",
+      "findings": [],
+      "deterministic_checks": {
+        "linkedin_present": true,
+        "email_subject_and_body_present": true,
+        "blog_headline_and_body_present": true,
+        "three_distinct_ads_present": true,
+        "all_assets_attributed": true,
+        "verified_facts_grounded": true
+      }
+    }
+  ],
+  "revision_count": 1,
+  "max_revisions": 2,
+  "step_count": 7,
+  "max_steps": 20,
+  "provider_attempts": 0,
+  "max_provider_attempts": 2,
+  "decision": {
+    "action": "complete",
+    "reason": "The latest review approved the suite."
+  },
+  "history": [
+    {
+      "step": 0,
+      "action": "initialize",
+      "outcome": "success",
+      "detail": "Workflow state initialized."
+    },
+    {
+      "step": 0,
+      "action": "supervisor",
+      "outcome": "selected",
+      "detail": "retrieve: Evidence has not been retrieved."
+    },
+    {
+      "step": 1,
+      "action": "retrieve",
+      "outcome": "success",
+      "detail": "Retrieved 3 attributed passage(s)."
+    },
+    {
+      "step": 1,
+      "action": "supervisor",
+      "outcome": "selected",
+      "detail": "analyze: Evidence is ready for campaign analysis."
+    },
+    {
+      "step": 2,
+      "action": "analyze",
+      "outcome": "success",
+      "detail": "Selected audience 'product marketing managers, revenue leaders' and tone 'clear, confident, and practical'."
+    },
+    {
+      "step": 2,
+      "action": "supervisor",
+      "outcome": "selected",
+      "detail": "generate: Grounded evidence is ready for generation."
+    },
+    {
+      "step": 3,
+      "action": "generate",
+      "outcome": "success",
+      "detail": "Generated all required content formats."
+    },
+    {
+      "step": 3,
+      "action": "supervisor",
+      "outcome": "selected",
+      "detail": "review: Generated assets need independent review."
+    },
+    {
+      "step": 4,
+      "action": "review",
+      "outcome": "success",
+      "detail": "Review decision: fail; 1 finding(s)."
+    },
+    {
+      "step": 4,
+      "action": "supervisor",
+      "outcome": "selected",
+      "detail": "revise: Review findings require a bounded revision."
+    },
+    {
+      "step": 5,
+      "action": "revise",
+      "outcome": "success",
+      "detail": "Generated all required content formats."
+    },
+    {
+      "step": 5,
+      "action": "supervisor",
+      "outcome": "selected",
+      "detail": "review: Generated assets need independent review."
+    },
+    {
+      "step": 6,
+      "action": "review",
+      "outcome": "success",
+      "detail": "Review decision: pass; 0 finding(s)."
+    },
+    {
+      "step": 6,
+      "action": "supervisor",
+      "outcome": "selected",
+      "detail": "complete: The latest review approved the suite."
+    },
+    {
+      "step": 7,
+      "action": "complete",
+      "outcome": "success",
+      "detail": "Automated review approved the content suite."
+    }
+  ],
+  "errors": [],
+  "human_request": null,
+  "human_response": null,
+  "metadata": {
+    "retrieval_attempted": true,
+    "evidence_issues": [],
+    "retrieval_mode": "vector",
+    "retrieval_error": null
+  }
+}

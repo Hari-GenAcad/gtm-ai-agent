@@ -1,0 +1,44 @@
+LaunchPilot AI - Approved Product Launch Brief
+
+Product overview
+LaunchPilot AI is a campaign planning workspace for B2B SaaS product marketing teams. It brings approved product facts, launch milestones, audience notes, and campaign drafts into one workflow.
+
+Approved product capabilities
+- Imports PDF, Markdown, CSV, XLSX, and Notion export files.
+- Retrieves relevant source passages before generating content.
+- Produces a LinkedIn post, promotional email, short blog draft, and three ad variations.
+- Reviews content for factual grounding, tone, audience fit, and consistency.
+- Sends unresolved claims to a human reviewer instead of inventing facts.
+
+Launch details
+- Public launch date: November 18, 2026.
+- Early-access webinar: November 12, 2026 at 3:00 PM IST.
+- Introductory price: INR 4,999 per workspace per month.
+- Free trial: 14 days.
+- Primary call to action: Start the 14-day free trial.
+
+Target audience
+The primary audience is product marketing managers and startup founders at B2B SaaS companies with 10 to 200 employees. A secondary audience is revenue leaders who coordinate launches across product, sales, and marketing teams.
+
+Customer problem
+Launch information is often spread across briefs, calendars, spreadsheets, and old campaign documents. This creates inconsistent messaging, missed dates, and unsupported claims.
+
+Value proposition
+LaunchPilot AI turns approved launch information into a coordinated, ready-to-edit campaign suite while preserving source attribution and human control.
+
+Approved messaging
+- Plan once and launch consistently across every channel.
+- Turn approved product evidence into coordinated campaign content.
+- Keep human reviewers in control of risky or incomplete claims.
+
+Tone guidance
+Use a clear, confident, practical, and evidence-led tone. Avoid hype, guarantees, competitor comparisons, and claims such as best, revolutionary, or risk-free.
+
+Required factual boundaries
+- Do not claim that LaunchPilot AI publishes content automatically.
+- Do not claim support for private Google Drive or Notion accounts.
+- Do not promise revenue growth or guaranteed campaign performance.
+- If a fact is not present in this brief, identify it as missing rather than inventing it.
+
+Past approved campaign line
+Your launch facts are already written down. LaunchPilot AI helps your team turn them into one consistent campaign.

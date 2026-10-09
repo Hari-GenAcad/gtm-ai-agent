@@ -1,0 +1,33 @@
+[
+  {
+    "id": "complete-brief",
+    "brief": "LaunchPad helps revenue teams build campaigns.\nLaunch date: November 1, 2026\nPricing: INR 4,999.",
+    "objective": "Launch LaunchPad for revenue teams",
+    "expected": "approved content suite"
+  },
+  {
+    "id": "missing-launch-date",
+    "brief": "LaunchPad helps revenue teams build campaigns. Pricing: INR 4,999.",
+    "objective": "Introduce LaunchPad to revenue teams",
+    "expected": "approved suite with launch timing flagged as missing"
+  },
+  {
+    "id": "contradictory-facts",
+    "brief": "LaunchPad helps revenue teams.\nLaunch date: May 1\nLaunch date: June 1",
+    "objective": "Launch LaunchPad for revenue teams",
+    "expected": "human review before generation"
+  },
+  {
+    "id": "unsupported-claim",
+    "brief": "LaunchPad is the world's best campaign product for revenue teams.",
+    "objective": "Promote LaunchPad to revenue teams",
+    "expected": "human review before repeating risky claim"
+  },
+  {
+    "id": "insufficient-evidence",
+    "brief": "Approved notes about office opening hours.",
+    "objective": "Promote quantum analytics to revenue teams",
+    "expected": "human clarification request"
+  }
+]
+

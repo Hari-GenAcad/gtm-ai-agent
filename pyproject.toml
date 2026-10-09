@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gtm-content-agent"
+version = "0.1.0"
+description = "Evidence-grounded GTM content workflow with LangGraph"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "langgraph>=1.0,<2",
+  "langgraph-checkpoint-sqlite>=3,<4",
+  "openai>=2.20,<3",
+  "chromadb>=1.5,<2",
+  "openpyxl>=3.1,<4",
+  "pydantic>=2.10,<3",
+  "protobuf>=5.29,<6",
+  "pypdf>=5,<7",
+  "rank-bm25>=0.2,<1",
+  "sentence-transformers>=5,<6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9", "pytest-cov>=6,<7"]
+ui = ["streamlit>=1.40,<2"]
+
+[project.scripts]
+gtm-agent = "gtm_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+# Streamlit's AppTest executes the page in a separate script runner. Its user flow
+# is acceptance-tested, but parent-process coverage cannot attribute those lines.
+omit = ["src/gtm_agent/ui/streamlit_app.py"]
