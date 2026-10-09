@@ -105,4 +105,5 @@ Implementation lesson: local embedding initialization must default to cache-only
 - Added a restricted public Google Sheets connector with HTTPS/host/path validation, numeric `gid` validation, a 5 MB limit, and original-URL attribution.
 - Added Streamlit support for public Sheets and persistent checkpoints.
 - Added tests for persistent runner resume, CLI cross-run resume, public Sheet validation/attribution, and a complete Streamlit upload-to-approved flow.
-- Final result: 68 passed, 0 failed, 0 skipped; 94% instrumented core coverage and 96% orchestration coverage.
+- Final result after supervisor fallback coverage: 69 passed, 0 failed, 0 skipped; 94% instrumented core coverage and 96% orchestration coverage.
+- Verified a successful live Gemini campaign from the sample PDF: vector retrieval, two evidence passages, four formats, three ads, one passing review, zero revisions, and zero errors.

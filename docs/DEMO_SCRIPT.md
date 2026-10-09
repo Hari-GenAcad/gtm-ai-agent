@@ -51,4 +51,4 @@ Upload all three sample files. Show Evidence, Campaign Analysis, Content, Review
 .\.venv-clean\Scripts\python.exe -m pytest --cov=gtm_agent --cov-report=term-missing
 ```
 
-Show 68 passing tests, 94% instrumented core coverage, the clean dependency check, and the Streamlit acceptance test. State that live Gemini reached the provider but returned HTTP 503 high-demand responses, so the deterministic sample—not live writing—is used for the reproducible demonstration.
+Show 69 passing tests, 94% instrumented core coverage, the clean dependency check, the Streamlit acceptance test, and the successful live Gemini run. Explain that the deterministic provider validates repeatable workflow paths while Gemini demonstrates the final writing quality.

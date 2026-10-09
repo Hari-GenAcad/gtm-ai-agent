@@ -6,7 +6,7 @@
 - Environment: isolated `D:\gtm-ai-agent\.venv-clean` (no system site-packages)
 - Dependency health: `pip check` -> `No broken requirements found.`
 - Test command: `.\.venv-clean\Scripts\python.exe -m pytest --cov=gtm_agent --cov-report=term-missing`
-- Acceptance result: **68 passed, 0 failed, 0 skipped**
+- Acceptance result: **69 passed, 0 failed, 0 skipped**
 - Instrumented core coverage: **94%**
 - Orchestration coverage: **96%**
 - Streamlit is run through `AppTest` in a separate script runner; that passing end-to-end flow is not attributed by the parent coverage process.
@@ -51,7 +51,7 @@ Three local sources were indexed with MiniLM/Chroma: `product_brief.md`, `launch
 
 ## Live-provider status
 
-Gemini authentication reached the service, but attempted free-tier models returned HTTP 503 high-demand responses after bounded retries. No successful live suite is claimed. Offline fake flows and both real-provider adapter contracts are verified independently.
+Gemini authentication, structured generation, and review were verified with the sample LaunchPilot AI PDF. The final live run completed with vector retrieval, two evidence passages, all four required formats, three ads, one passing review, zero revisions, and zero errors. Temporary free-tier capacity failures remain possible and are handled with bounded retries and an explicit timeout.
 
 ## Remaining limitations
 

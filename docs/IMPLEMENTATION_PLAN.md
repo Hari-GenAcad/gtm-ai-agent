@@ -27,9 +27,8 @@ Build a focused local GTM content agent that satisfies the assignment without ex
 7. Multi-format ingestion and autonomous campaign analysis — complete.
 8. Semantic, flow, recovery, and evaluation tests — complete.
 9. Saved sample content suite and documentation — complete.
-10. Live-provider validation — attempted but externally blocked by Gemini HTTP 503 capacity.
+10. Live-provider validation — completed successfully with Gemini after bounded failure-recovery testing.
 
 ## Definition of done
 
 Offline completion requires successful multi-source ingestion, vector retrieval with attribution, automatic campaign analysis, all four formats, independent review, conditional revision, human pause/resume, bounded failure handling, a saved sample, and executed regression tests. Live-model success is reported separately and is not fabricated when the provider is unavailable.
-
