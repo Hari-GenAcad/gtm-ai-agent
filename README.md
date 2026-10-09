@@ -83,40 +83,9 @@ The fake provider is a testing tool, not the production writing experience. It p
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    A[PDF / Markdown / CSV / XLSX / Notion ZIP / Public Sheet] --> B[Ingestion and normalization]
-    B --> C[Chunking]
-    C --> D[MiniLM embeddings]
-    D --> E[(Persistent Chroma vector store)]
-    E --> F[Attributed evidence retrieval]
-    F --> G[Campaign analysis]
-    G --> H[Multi-format generation]
-    H --> I[AI review + deterministic checks]
-    I -->|Pass| J[Approved content suite]
-    I -->|Fixable issue| K[Bounded revision]
-    K --> I
-    I -->|Unresolved / risky| L[Human review interrupt]
-    L -->|Clarify| F
-    L -->|Approve| M[Explicitly human-accepted result]
-    L -->|Reject| N[Stopped safely]
-```
+![Evidence-Grounded GTM Content Agent architecture](architecture.svg)
 
-### LangGraph flow
-
-```text
-START -> initialize -> supervisor
-                         |-> retrieve -> supervisor
-                         |-> analyze  -> supervisor
-                         |-> generate -> supervisor
-                         |-> review   -> supervisor
-                         |-> revise   -> supervisor
-                         |-> human interrupt -> supervisor
-                         |-> complete -> END
-                         `-> fail -> END
-```
-
-The supervisor may select only actions that are legal for the current state. Provider retries, revision attempts, and total graph steps are bounded.
+This is the canonical project diagram. It reflects the implemented ingestion paths, supervisor-controlled LangGraph nodes, MiniLM/Chroma retrieval with explicit BM25 fallback, structured LLM clients, hybrid review, human interrupt/resume behavior, and optional SQLite checkpointing. The supervisor may select only actions legal for the current state; provider retries, revision attempts, and total graph steps are bounded.
 
 ## Technology stack
 

@@ -16,3 +16,4 @@ build/
 .gtm-checkpoints*.sqlite*
 .models/
 artifacts/
+docs/LOOM_SCRIPT.md

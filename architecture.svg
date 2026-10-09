@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence-Grounded GTM Content Agent Architecture</title>
+  <desc id="desc">Sources and campaign inputs enter ingestion, then a LangGraph supervisor routes retrieval, analysis, generation, review, revision, human review, completion, or failure. Retrieval uses MiniLM and Chroma with BM25 fallback. Model-backed nodes use Fake, Gemini, or OpenAI clients. SQLite optionally persists checkpoints.</desc>
+  <defs>
+    <style>
+      .title { font: 700 32px Arial, sans-serif; fill: #172033; }
+      .lane { font: 700 20px Arial, sans-serif; fill: #344054; }
+      .head { font: 700 17px Arial, sans-serif; fill: #172033; }
+      .body { font: 14px Arial, sans-serif; fill: #344054; }
+      .small { font: 12px Arial, sans-serif; fill: #475467; }
+      .box { stroke-width: 2; rx: 14; ry: 14; }
+      .arrow { fill: none; stroke: #667085; stroke-width: 2.4; marker-end: url(#arrow); }
+      .dashed { fill: none; stroke: #7f56d9; stroke-width: 2.2; stroke-dasharray: 8 6; marker-end: url(#purpleArrow); }
+      .store { fill: #eef4ff; stroke: #3b82f6; }
+      .agent { fill: #f4ebff; stroke: #7f56d9; }
+      .safe { fill: #ecfdf3; stroke: #12b76a; }
+      .warn { fill: #fffaeb; stroke: #f79009; }
+      .neutral { fill: #f9fafb; stroke: #98a2b3; }
+      .input { fill: #fff4ed; stroke: #f97316; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#667085"/>
+    </marker>
+    <marker id="purpleArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7f56d9"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1080" fill="#ffffff"/>
+  <text x="800" y="48" text-anchor="middle" class="title">Evidence-Grounded GTM Content Agent</text>
+
+  <text x="42" y="96" class="lane">1. Inputs and ingestion</text>
+  <rect x="42" y="116" width="300" height="125" class="box input"/>
+  <text x="192" y="145" text-anchor="middle" class="head">Approved sources</text>
+  <text x="192" y="174" text-anchor="middle" class="body">PDF · TXT · Markdown · CSV · XLSX</text>
+  <text x="192" y="198" text-anchor="middle" class="body">Notion export ZIP · Public Google Sheet</text>
+  <text x="192" y="222" text-anchor="middle" class="small">Each document keeps its source ID</text>
+
+  <rect x="42" y="262" width="300" height="112" class="box input"/>
+  <text x="192" y="292" text-anchor="middle" class="head">Campaign request</text>
+  <text x="192" y="320" text-anchor="middle" class="body">Objective · optional audience · optional tone</text>
+  <text x="192" y="346" text-anchor="middle" class="small">Entered through Streamlit or CLI</text>
+
+  <rect x="412" y="144" width="285" height="170" class="box neutral"/>
+  <text x="554" y="174" text-anchor="middle" class="head">Ingestion and normalization</text>
+  <text x="554" y="204" text-anchor="middle" class="body">Extract text and labelled rows</text>
+  <text x="554" y="230" text-anchor="middle" class="body">Expand Notion ZIP members</text>
+  <text x="554" y="256" text-anchor="middle" class="body">Validate public Sheet URL</text>
+  <text x="554" y="282" text-anchor="middle" class="small">Produces attributed ProductBrief documents</text>
+
+  <rect x="765" y="162" width="255" height="130" class="box agent"/>
+  <text x="892" y="193" text-anchor="middle" class="head">Initialize graph state</text>
+  <text x="892" y="220" text-anchor="middle" class="body">Documents + campaign + limits</text>
+  <text x="892" y="246" text-anchor="middle" class="body">History + errors + metadata</text>
+  <text x="892" y="270" text-anchor="middle" class="small">LangGraph thread ID</text>
+
+  <rect x="1100" y="130" width="445" height="198" class="box neutral"/>
+  <text x="1322" y="162" text-anchor="middle" class="head">Selected LLM client</text>
+  <text x="1322" y="194" text-anchor="middle" class="body">Gemini · OpenAI · deterministic FakeLLM</text>
+  <text x="1322" y="225" text-anchor="middle" class="body">Strict Pydantic structured outputs</text>
+  <text x="1322" y="256" text-anchor="middle" class="body">Used by supervisor, analysis, generation,</text>
+  <text x="1322" y="279" text-anchor="middle" class="body">qualitative review, and revision</text>
+  <text x="1322" y="305" text-anchor="middle" class="small">Bounded provider retries and timeout</text>
+
+  <path d="M342 180 H412" class="arrow"/>
+  <path d="M342 318 H730 V270 H765" class="arrow"/>
+  <path d="M697 228 H765" class="arrow"/>
+  <path d="M892 292 V385 H150 V505" class="arrow"/>
+
+  <text x="42" y="430" class="lane">2. Stateful LangGraph orchestration</text>
+  <rect x="42" y="450" width="1503" height="430" rx="22" fill="#fcfaff" stroke="#b692f6" stroke-width="2"/>
+
+  <polygon points="150,505 270,575 150,645 30,575" fill="#f4ebff" stroke="#7f56d9" stroke-width="2.5"/>
+  <text x="150" y="562" text-anchor="middle" class="head">Supervisor</text>
+  <text x="150" y="586" text-anchor="middle" class="small">select + validate</text>
+  <text x="150" y="606" text-anchor="middle" class="small">one legal action</text>
+
+  <rect x="330" y="482" width="250" height="155" class="box store"/>
+  <text x="455" y="510" text-anchor="middle" class="head">Retrieve</text>
+  <text x="455" y="537" text-anchor="middle" class="body">Chunk documents</text>
+  <text x="455" y="560" text-anchor="middle" class="body">MiniLM embeddings + Chroma</text>
+  <text x="455" y="583" text-anchor="middle" class="body">BM25 explicit fallback</text>
+  <text x="455" y="606" text-anchor="middle" class="small">Evidence + attribution + risk checks</text>
+
+  <rect x="630" y="482" width="215" height="155" class="box agent"/>
+  <text x="737" y="510" text-anchor="middle" class="head">Analyze</text>
+  <text x="737" y="537" text-anchor="middle" class="body">Audience and tone</text>
+  <text x="737" y="560" text-anchor="middle" class="body">Value proposition</text>
+  <text x="737" y="583" text-anchor="middle" class="body">Key messages</text>
+  <text x="737" y="606" text-anchor="middle" class="small">Rationale + missing facts</text>
+
+  <rect x="895" y="482" width="230" height="155" class="box agent"/>
+  <text x="1010" y="510" text-anchor="middle" class="head">Generate / Revise</text>
+  <text x="1010" y="537" text-anchor="middle" class="body">LinkedIn post</text>
+  <text x="1010" y="560" text-anchor="middle" class="body">Email + short blog</text>
+  <text x="1010" y="583" text-anchor="middle" class="body">At least three ads</text>
+  <text x="1010" y="606" text-anchor="middle" class="small">Source IDs + verified facts</text>
+
+  <rect x="1175" y="482" width="335" height="155" class="box safe"/>
+  <text x="1342" y="510" text-anchor="middle" class="head">Review</text>
+  <text x="1342" y="537" text-anchor="middle" class="body">Deterministic completeness, attribution,</text>
+  <text x="1342" y="560" text-anchor="middle" class="body">distinctness, and grounding checks</text>
+  <text x="1342" y="583" text-anchor="middle" class="body">+ independent qualitative LLM review</text>
+  <text x="1342" y="606" text-anchor="middle" class="small">Pass or structured findings</text>
+
+  <rect x="330" y="704" width="275" height="125" class="box warn"/>
+  <text x="467" y="734" text-anchor="middle" class="head">Human review interrupt</text>
+  <text x="467" y="761" text-anchor="middle" class="body">Approve · reject · clarify</text>
+  <text x="467" y="787" text-anchor="middle" class="small">Clarification clears derived state</text>
+  <text x="467" y="807" text-anchor="middle" class="small">and returns to retrieval</text>
+
+  <rect x="760" y="704" width="220" height="125" class="box safe"/>
+  <text x="870" y="740" text-anchor="middle" class="head">Complete</text>
+  <text x="870" y="769" text-anchor="middle" class="body">Approved, or explicitly</text>
+  <text x="870" y="792" text-anchor="middle" class="body">human-accepted result</text>
+
+  <rect x="1070" y="704" width="220" height="125" class="box warn"/>
+  <text x="1180" y="740" text-anchor="middle" class="head">Fail safely</text>
+  <text x="1180" y="769" text-anchor="middle" class="body">Terminal error or</text>
+  <text x="1180" y="792" text-anchor="middle" class="body">explicit rejection</text>
+
+  <rect x="1350" y="704" width="160" height="125" class="box store"/>
+  <text x="1430" y="738" text-anchor="middle" class="head">Checkpoint</text>
+  <text x="1430" y="766" text-anchor="middle" class="body">Memory default</text>
+  <text x="1430" y="789" text-anchor="middle" class="body">SQLite durable</text>
+  <text x="1430" y="811" text-anchor="middle" class="small">per thread ID</text>
+
+  <path d="M270 575 H300 V458 H1342" fill="none" stroke="#667085" stroke-width="2.4"/>
+  <path d="M455 458 V482" class="arrow"/>
+  <path d="M737 458 V482" class="arrow"/>
+  <path d="M1010 458 V482" class="arrow"/>
+  <path d="M1342 458 V482" class="arrow"/>
+  <text x="802" y="451" text-anchor="middle" class="small">supervisor selects one legal action</text>
+
+  <path d="M455 637 V660" fill="none" stroke="#7f56d9" stroke-width="2.2" stroke-dasharray="8 6"/>
+  <path d="M737 637 V660" fill="none" stroke="#7f56d9" stroke-width="2.2" stroke-dasharray="8 6"/>
+  <path d="M1010 637 V660" fill="none" stroke="#7f56d9" stroke-width="2.2" stroke-dasharray="8 6"/>
+  <path d="M1342 637 V660 H150 V645" class="dashed"/>
+  <text x="802" y="654" text-anchor="middle" class="small">action writes state and returns to the supervisor</text>
+
+  <path d="M150 645 V688 H1180" fill="none" stroke="#667085" stroke-width="2.4"/>
+  <path d="M467 688 V704" class="arrow"/>
+  <path d="M870 688 V704" class="arrow"/>
+  <path d="M1180 688 V704" class="arrow"/>
+  <text x="467" y="682" text-anchor="middle" class="small">request human</text>
+  <text x="870" y="682" text-anchor="middle" class="small">approved</text>
+  <text x="1110" y="682" text-anchor="middle" class="small">fatal or rejected</text>
+
+  <path d="M330 766 H290 V645 H150" class="dashed"/>
+  <text x="222" y="735" text-anchor="middle" class="small">resume</text>
+  <path d="M1430 704 V662 H1518 V575 H1510" class="dashed"/>
+
+  <path d="M1100 228 H1060 V420 H150 V505" class="dashed"/>
+  <path d="M1322 328 V405 H737" fill="none" stroke="#7f56d9" stroke-width="2.2" stroke-dasharray="8 6"/>
+  <path d="M737 405 V482" class="dashed"/>
+  <path d="M1010 405 V482" class="dashed"/>
+  <path d="M1342 405 V482" class="dashed"/>
+
+  <text x="42" y="935" class="lane">3. Result and interfaces</text>
+  <rect x="215" y="962" width="300" height="84" class="box safe"/>
+  <text x="365" y="994" text-anchor="middle" class="head">Reviewed content suite</text>
+  <text x="365" y="1021" text-anchor="middle" class="body">Content + evidence + analysis + review</text>
+
+  <rect x="650" y="962" width="300" height="84" class="box neutral"/>
+  <text x="800" y="994" text-anchor="middle" class="head">Streamlit UI</text>
+  <text x="800" y="1021" text-anchor="middle" class="body">Inspect · respond · download JSON</text>
+
+  <rect x="1085" y="962" width="300" height="84" class="box neutral"/>
+  <text x="1235" y="994" text-anchor="middle" class="head">CLI and JSON export</text>
+  <text x="1235" y="1021" text-anchor="middle" class="body">Automate · checkpoint · resume</text>
+
+  <path d="M870 829 V910 H365 V962" class="arrow"/>
+  <path d="M515 1004 H650" class="arrow"/>
+  <path d="M580 1004 V938 H1235 V962" class="arrow"/>
+</svg>
